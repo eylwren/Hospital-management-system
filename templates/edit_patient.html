@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Patient | HMS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <header class="dashboard-header">
+        <h1>Edit Patient</h1>
+        <div class="header-actions">
+            <a href="{{ url_for('patients') }}" class="nav-link">Back to Patients</a>
+        </div>
+    </header>
+
+    <main class="patients-page">
+        <section class="patient-panel">
+            <h2>Edit Patient #{{ patient.patient_id }}</h2>
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% for category, message in messages %}
+                    <p class="notice {{ category }}">{{ message }}</p>
+                {% endfor %}
+            {% endwith %}
+
+            <form method="POST"
+                  action="{{ url_for('edit_patient', patient_id=patient.patient_id) }}"
+                  class="patient-form">
+
+                <label>Identity Type *
+                    <input name="identity_type" maxlength="20" required
+                           value="{{ patient.identity_type }}">
+                </label>
+
+                <label>Identity Number *
+                    <input name="identity_number" maxlength="30" required
+                           value="{{ patient.identity_number }}">
+                </label>
+
+                <label>Nationality *
+                    <input name="nationality" maxlength="50" required
+                           value="{{ patient.nationality }}">
+                </label>
+
+                <label>First Name *
+                    <input name="first_name" maxlength="50" required
+                           value="{{ patient.first_name }}">
+                </label>
+
+                <label>Last Name *
+                    <input name="last_name" maxlength="50" required
+                           value="{{ patient.last_name }}">
+                </label>
+
+                <label>Date of Birth *
+                    <input
+    type="date"
+    name="date_of_birth"
+    required
+    value="{{ patient.date_of_birth.strftime('%Y-%m-%d') if patient.date_of_birth else '' }}"
+>
+                </label>
+
+                <label>Gender
+                    <input name="gender" maxlength="20"
+                           value="{{ patient.gender or '' }}">
+                </label>
+
+                <label>Blood Type
+                    <select name="blood_type">
+                        <option value="">Not specified</option>
+                        {% for blood in ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'] %}
+                            <option value="{{ blood }}"
+                                {% if patient.blood_type == blood %}selected{% endif %}>
+                                {{ blood }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </label>
+
+                <label>Phone
+                    <input type="tel" name="phone" maxlength="20"
+                           value="{{ patient.phone or '' }}">
+                </label>
+
+                <label>Smoking Status
+                    <select name="smoking_status">
+                        <option value="">Not specified</option>
+                        {% for status in ['Never', 'Former', 'Current'] %}
+                            <option value="{{ status }}"
+                                {% if patient.smoking_status == status %}selected{% endif %}>
+                                {{ status }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </label>
+
+                <label class="full-width">Address
+                    <input name="address" maxlength="255"
+                           value="{{ patient.address or '' }}">
+                </label>
+
+                <label class="full-width">Allergies
+                    <textarea name="allergies">{{ patient.allergies or '' }}</textarea>
+                </label>
+
+                <button type="submit">Save Changes</button>
+                <a href="{{ url_for('patients') }}">Cancel</a>
+            </form>
+        </section>
+    </main>
+
+</body>
+</html>

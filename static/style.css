@@ -29,3 +29,384 @@ body {
     font-size: 18px;
     color: #555;
 }
+
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    background: #f3f7f6;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 420px;
+    padding: 36px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+}
+
+.login-card h1 {
+    color: #176b61;
+    margin-bottom: 4px;
+}
+
+.login-card h2 {
+    margin-top: 28px;
+    font-size: 22px;
+}
+
+.login-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.login-card input {
+    padding: 12px;
+    border: 1px solid #d5dfdc;
+    border-radius: 8px;
+    font: inherit;
+}
+
+.login-card button {
+    margin-top: 12px;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #176b61;
+    color: white;
+    font: inherit;
+    cursor: pointer;
+}
+
+.login-error {
+    padding: 10px;
+    border-radius: 8px;
+    background: #fff0f0;
+    color: #a12626;
+}
+
+
+/* Login page */
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    box-sizing: border-box;
+    background: #f3f7f6;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 420px;
+    box-sizing: border-box;
+    padding: 36px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+}
+
+.login-card h1 {
+    margin-bottom: 4px;
+    color: #176b61;
+}
+
+.login-card > p {
+    color: #64748b;
+}
+
+.login-card h2 {
+    margin-top: 28px;
+    font-size: 22px;
+    color: #243746;
+}
+
+.login-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.login-card label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #334155;
+}
+
+.login-card input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #d5dfdc;
+    border-radius: 8px;
+    font: inherit;
+}
+
+.login-card input:focus {
+    outline: 2px solid #176b61;
+    outline-offset: 1px;
+}
+
+.login-card button {
+    margin-top: 12px;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #176b61;
+    color: white;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.login-card button:hover {
+    background: #12564e;
+}
+
+.login-error {
+    padding: 10px;
+    border-radius: 8px;
+    background: #fff0f0;
+    color: #a12626;
+}
+
+@media (max-width: 480px) {
+    .login-card {
+        padding: 24px;
+    }
+}
+
+
+/* Dashboard header */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 32px;
+    background: #24557b;
+    color: white;
+}
+
+.dashboard-header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.header-actions form {
+    margin: 0;
+}
+
+.logout-button {
+    padding: 9px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 8px;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    font: inherit;
+}
+
+.logout-button:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.database-status {
+    margin-top: 20px;
+    color: #176b61;
+}
+
+@media (max-width: 650px) {
+    .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-actions {
+        flex-wrap: wrap;
+    }
+}
+
+
+.patients-page {
+    max-width: 1400px;
+    margin: 32px auto;
+    padding: 0 24px;
+    color: #243746;
+}
+
+.patient-panel {
+    margin: 24px 0;
+    padding: 24px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+}
+
+.patient-form {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.patient-form label {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.patient-form input,
+.patient-form select,
+.patient-form textarea,
+.search-form input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #d5dfdc;
+    border-radius: 7px;
+    font: inherit;
+}
+
+.patient-form textarea {
+    min-height: 70px;
+    resize: vertical;
+}
+
+.patient-form .full-width {
+    grid-column: 1 / -1;
+}
+
+.patient-form button,
+.search-form button {
+    padding: 11px 16px;
+    border: none;
+    border-radius: 7px;
+    background: #176b61;
+    color: white;
+    cursor: pointer;
+    font: inherit;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.search-form input {
+    max-width: 420px;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.patient-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.patient-table th,
+.patient-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+    white-space: nowrap;
+}
+
+.patient-table th {
+    background: #edf3f6;
+}
+
+.notice {
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.notice.success {
+    background: #e8f6ee;
+    color: #176b43;
+}
+
+.notice.error {
+    background: #fff0f0;
+    color: #a12626;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+}
+
+@media (max-width: 800px) {
+    .patient-form {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 520px) {
+    .patient-form {
+        grid-template-columns: 1fr;
+    }
+
+    .patient-form .full-width {
+        grid-column: auto;
+    }
+
+    .search-form {
+        align-items: stretch;
+        flex-direction: column;
+    }
+}
+
+
+.patient-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+}
+
+.patient-actions form {
+    margin: 0;
+}
+
+.delete-button {
+    background-color: #b42318;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 7px 12px;
+    cursor: pointer;
+    font: inherit;
+}
+
+.delete-button:hover {
+    background-color: #8f1d14;
+}
+
+.edit-link {
+    color: #176b61;
+    text-decoration: none;
+}
+
+.edit-link:hover {
+    text-decoration: underline;
+}
