@@ -1,4 +1,4 @@
-# Hospital Management System (HMS)
+# Hospital Management System 
 
 A Flask-based Hospital Management System designed to support inpatient clinical information management and General Surgery patient follow-up.
 
