@@ -26,7 +26,7 @@ The EER diagram illustrates the relational database structure designed for the H
 - User login and logout
 - Password hashing and verification
 - Session-based authentication
-- Role-based access control (RBAC)
+- Role-based access control
 - Restricted access to unauthorized operations
 - HTTP 403 Forbidden error handling
 
