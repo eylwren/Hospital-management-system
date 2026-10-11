@@ -2,6 +2,13 @@
 
 A Flask-based Hospital Management System designed to support inpatient clinical information management and General Surgery patient follow-up.
 
+## Database Design
+
+The EER diagram illustrates the relational database structure
+designed for the Hospital Management System.
+
+![Hospital Management System EER Diagram](docs/eer-diagram.png)
+
 ## Technologies
 
 - **Backend:** Python, Flask
